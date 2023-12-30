@@ -5,10 +5,10 @@ import json
 import sys
 import mysql.connector
 from PyQt5 import QtWidgets, QtCore
-from Server_output import Ui_MainWindow  # 替换为您的UI类
+from Server_output import Ui_MainWindow  # Remplacer par votre classe UI
 import logging
 
-# 设置日志
+# Configuration des logs
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.DEBUG,
                               logging.StreamHandler()])
 logger = logging.getLogger(__name__)
 
-# 数据库和其他全局变量配置
+# Configuration de la base de données et autres variables globales
 DB_HOST = 'localhost'
 DB_USER = 'root'
 DB_PASSWORD = 'toto'
@@ -27,18 +27,18 @@ msg = queue.Queue()
 users = []
 lock = threading.Lock()
 
-# 连接到数据库的函数
+# Fonction pour se connecter à la base de données
 def connect_to_database():
     try:
         db = mysql.connector.connect(
             host=DB_HOST, user=DB_USER, password=DB_PASSWORD, database=DB_DATABASE)
-        logger.info("数据库连接成功。")
+        logger.info("Connexion à la base de données réussie.")
         return db
     except Exception as e:
-        logger.error("连接数据库失败:", e)
+        logger.error("Échec de la connexion à la base de données :", e)
         raise
 
-# 将在线用户存入online列表并返回
+# Fonction pour obtenir la liste des utilisateurs en ligne
 def onlines(users):
     return [user[1] for user in users]
 
@@ -61,7 +61,7 @@ class ChatServer(QtCore.QObject):
             self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.server_socket.bind(self.ADDR)
             self.server_socket.listen(5)
-            logger.info('Chat server starts running...')
+            logger.info('Le serveur de chat commence à fonctionner...')
             threading.Thread(target=self.accept_connections, daemon=True).start()
             threading.Thread(target=self.sendData, daemon=True).start()
 
@@ -71,7 +71,7 @@ class ChatServer(QtCore.QObject):
             if self.server_socket:
                 self.server_socket.close()
                 self.server_socket = None
-            logger.info('Chat server stopped.')
+            logger.info('Le serveur de chat est arrêté.')
 
     def accept_connections(self):
         while self.is_running:
@@ -83,20 +83,20 @@ class ChatServer(QtCore.QObject):
             credentials = conn.recv(1024).decode()
             username, password = credentials.split(':')
             if username in self.banned_users:
-                conn.send("You are banned.".encode())
+                conn.send("Vous êtes banni.".encode())
                 conn.close()
                 return
             if self.validate_user(username, password):
-                conn.send("登录成功".encode())
+                conn.send("Connexion réussie".encode())
                 with lock:
                     self.users.append((conn, username, addr))
                 self.update_online_users()
                 threading.Thread(target=self.recv, args=(conn, addr), daemon=True).start()
             else:
-                conn.send("登录失败".encode())
+                conn.send("Échec de la connexion".encode())
                 conn.close()
         except Exception as e:
-            logger.error(f"Connection error: {e}")
+            logger.error(f"Erreur de connexion : {e}")
             conn.close()
 
     def update_online_users(self):
@@ -107,25 +107,26 @@ class ChatServer(QtCore.QObject):
         while True:
             try:
                 data = conn.recv(1024).decode()
-                logger.debug(f"Raw data received from {addr}: {data}")
+                logger.debug(f"Données brutes reçues de {addr} : {data}")
                 if data:
                     with lock:
                         self.msg_queue.put((addr, data))
                 else:
                     break
             except Exception as e:
-                logger.error(f"Error receiving data from {addr}: {e}")
+                logger.error(f"Erreur de réception des données de {addr} : {e}")
                 break
         self.delUsers(conn, addr)
         
     def sendData(self):
+        logger.debug("sendData thread started.")
         while True:
             if not self.msg_queue.empty():
                 with lock:
                     addr, data = self.msg_queue.get()
                 try:
                     if data.count(':;') != 2:
-                        logger.error(f"Received data in wrong format: {data}")
+                        logger.error(f"Données reçues dans un format incorrect : {data}")
                         continue
                     message, sender, receiver = data.split(':;')
                     send_data = f"{message}:;{sender}:;{receiver}"
@@ -134,7 +135,7 @@ class ChatServer(QtCore.QObject):
                             try:
                                 user[0].send(send_data.encode())
                             except Exception as e:
-                                logger.error(f"Error sending message to {user[1]}: {e}")
+                                logger.error(f"Erreur lors de l'envoi du message à {user[1]} : {e}")
                                 self.delUsers(user[0], user[2])
                     else:
                         for user in self.users:
@@ -143,18 +144,18 @@ class ChatServer(QtCore.QObject):
                                     user[0].send(send_data.encode())
                                     break
                                 except Exception as e:
-                                    logger.error(f"Error sending private message to {user[1]}: {e}")
+                                    logger.error(f"Erreur lors de l'envoi d'un message privé à {user[1]} : {e}")
                                     self.delUsers(user[0], user[2])
                                     break
                 except Exception as e:
-                    logger.error(f"Error processing message: {e}")
+                    logger.error(f"Erreur lors du traitement du message : {e}")
 
     def delUsers(self, conn, addr):
         with lock:
             for i, user in enumerate(self.users):
                 if user[0] == conn:
                     self.users.pop(i)
-                    leave_msg = f"{user[1]} has left the chat room."
+                    leave_msg = f"{user[1]} a quitté la salle de chat."
                     self.broadcast(leave_msg)
                     break
         conn.close()
@@ -171,7 +172,7 @@ class ChatServer(QtCore.QObject):
             else:
                 return False
         except Exception as e:
-            logger.error(f"验证用户时出错: {e}")
+            logger.error(f"Erreur lors de la validation de l'utilisateur : {e}")
             return False
         finally:
             cursor.close()
@@ -182,18 +183,18 @@ class ChatServer(QtCore.QObject):
             try:
                 user[0].send(message.encode())
             except Exception as e:
-                logger.error(f"Error sending message to {user[1]}: {e}")
+                logger.error(f"Erreur lors de l'envoi du message à {user[1]} : {e}")
                 self.delUsers(user[0], user[2])
 
     def kick_user(self, username):
         for user in self.users:
             if user[1] == username:
                 try:
-                    user[0].send("You have been kicked out.".encode())
+                    user[0].send("Vous avez été expulsé.".encode())
                     user[0].close()
                     self.delUsers(user[0], user[2])
                 except Exception as e:
-                    logger.error(f"Error kicking out {username}: {e}")
+                    logger.error(f"Erreur lors de l'expulsion de {username} : {e}")
                 break
 
     def ban_user(self, username):
@@ -219,10 +220,10 @@ class ServerWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.userTable.setRowCount(len(user_list))
         for row, username in enumerate(user_list):
             self.userTable.setItem(row, 0, QtWidgets.QTableWidgetItem(username))
-            kick_button = QtWidgets.QPushButton('踢出')
+            kick_button = QtWidgets.QPushButton('Expulser')
             kick_button.clicked.connect(lambda checked, user=username: self.kick_user(user))
             self.userTable.setCellWidget(row, 1, kick_button)
-            ban_button = QtWidgets.QPushButton('封禁')
+            ban_button = QtWidgets.QPushButton('Bannir')
             ban_button.clicked.connect(lambda checked, user=username: self.ban_user(user))
             self.userTable.setCellWidget(row, 2, ban_button)
 

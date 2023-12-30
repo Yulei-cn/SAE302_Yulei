@@ -763,3 +763,205 @@
 2023-12-28 22:52:35 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
 2023-12-28 22:52:35 - __main__ - INFO - 数据库连接成功。
 2023-12-28 22:52:38 - __main__ - DEBUG - Raw data received from ('127.0.0.1', 24159): 
+2023-12-30 19:03:37 - __main__ - INFO - Chat server starts running...
+2023-12-30 19:04:27 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:04:28 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:04:28 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:04:28 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:04:28 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:04:28 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-30 19:04:28 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-30 19:04:28 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-30 19:04:28 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:04:28 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:04:28 - __main__ - INFO - 数据库连接成功。
+2023-12-30 19:04:29 - __main__ - DEBUG - Raw data received from ('127.0.0.1', 13187): toto
+2023-12-30 19:04:29 - __main__ - ERROR - Received data in wrong format: toto
+2023-12-30 19:04:35 - __main__ - DEBUG - Raw data received from ('127.0.0.1', 13187): i an toto:;toto:;------Group chat-------
+2023-12-30 19:05:14 - __main__ - ERROR - Error receiving data from ('127.0.0.1', 13187): [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2023-12-30 19:05:28 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:05:28 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:05:29 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:05:29 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:05:29 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:05:29 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:05:29 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:05:29 - __main__ - INFO - 数据库连接成功。
+2023-12-30 19:05:31 - __main__ - DEBUG - Raw data received from ('127.0.0.1', 13196): 
+2023-12-30 19:05:35 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:05:35 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:05:35 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:05:35 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:05:35 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:05:35 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:05:35 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:05:35 - __main__ - INFO - 数据库连接成功。
+2023-12-30 19:05:37 - __main__ - DEBUG - Raw data received from ('127.0.0.1', 13199): 
+2023-12-30 19:05:44 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:05:44 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:05:44 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:05:45 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:05:45 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:05:45 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:05:45 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:05:45 - __main__ - INFO - 数据库连接成功。
+2023-12-30 19:05:47 - __main__ - DEBUG - Raw data received from ('127.0.0.1', 13201): 
+2023-12-30 19:05:54 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:05:54 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:05:54 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:05:54 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:05:54 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:05:54 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:05:54 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:05:54 - __main__ - INFO - 数据库连接成功。
+2023-12-30 19:05:57 - __main__ - DEBUG - Raw data received from ('127.0.0.1', 13203): 
+2023-12-30 19:06:10 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:06:10 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:06:10 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:06:10 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:06:10 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:06:10 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:06:10 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:06:10 - __main__ - INFO - 数据库连接成功。
+2023-12-30 19:06:13 - __main__ - DEBUG - Raw data received from ('127.0.0.1', 13208): 
+2023-12-30 19:06:22 - __main__ - ERROR - Connection error: too many values to unpack (expected 2)
+2023-12-30 19:06:26 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:06:26 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:06:26 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:06:26 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:06:26 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:06:26 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:06:26 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:06:26 - __main__ - INFO - 数据库连接成功。
+2023-12-30 19:12:00 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-30 19:12:08 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:12:08 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:12:09 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:12:09 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:12:09 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:12:09 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-30 19:12:09 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-30 19:12:09 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-30 19:12:09 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:12:09 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:12:09 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:12:09 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 17911) : toto
+2023-12-30 19:12:09 - __main__ - ERROR - Données reçues dans un format incorrect : toto
+2023-12-30 19:12:19 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 17911) : hi
+:;toto:;------Chat de groupe-------
+2023-12-30 19:17:02 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 17911) : [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2023-12-30 19:17:14 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:17:14 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:17:14 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:17:14 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:17:14 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:17:14 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:17:14 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:17:14 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:17:15 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 31727) : toto
+2023-12-30 19:17:15 - __main__ - ERROR - Données reçues dans un format incorrect : toto
+2023-12-30 19:17:21 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 31727) : hi ai toto
+:;toto:;------Chat de groupe-------
+2023-12-30 19:17:24 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 31727) : [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2023-12-30 19:17:42 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-30 19:18:01 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:18:01 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:18:01 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:18:01 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:18:01 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:18:01 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-30 19:18:01 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-30 19:18:01 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-30 19:18:02 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:18:02 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:18:02 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:18:02 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 46631) : toto
+2023-12-30 19:18:02 - __main__ - ERROR - Données reçues dans un format incorrect : toto
+2023-12-30 19:18:07 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 46631) : hi i am toto
+:;toto:;------Chat de groupe-------
+2023-12-30 19:19:54 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 46631) : [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+2023-12-30 19:20:29 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-30 19:20:41 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:20:41 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:20:41 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:20:41 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:20:41 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:20:41 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-30 19:20:41 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-30 19:20:41 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-30 19:20:42 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:20:42 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:20:42 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:20:42 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 46653) : toto
+2023-12-30 19:20:42 - __main__ - ERROR - Données reçues dans un format incorrect : toto
+2023-12-30 19:20:47 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 46653) : i am toto:;toto:;------Chat de groupe-------
+2023-12-30 19:27:45 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-30 19:27:50 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:27:51 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:27:51 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:27:51 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:27:51 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:27:51 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-30 19:27:51 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-30 19:27:51 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-30 19:27:51 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:27:51 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:27:51 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:27:56 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 31912) : hi i am toto:;toto:;------Chat de groupe-------
+2023-12-30 19:29:16 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-30 19:29:16 - __main__ - DEBUG - sendData thread started.
+2023-12-30 19:29:29 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:29:29 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:29:29 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:29:29 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:29:29 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:29:30 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-30 19:29:30 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-30 19:29:30 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-30 19:29:30 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:29:30 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:29:30 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:29:36 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 31939) : hi i am toto:;toto:;------Chat de groupe-------
+2023-12-30 19:37:51 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-30 19:37:51 - __main__ - DEBUG - sendData thread started.
+2023-12-30 19:38:05 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:38:05 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:38:05 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:38:05 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:38:05 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:38:05 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-30 19:38:05 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-30 19:38:05 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-30 19:38:06 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:38:06 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:38:06 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:38:12 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 4628) : hi i am toto:;toto:;------Chat de groupe-------
+2023-12-30 19:40:03 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-30 19:40:03 - __main__ - DEBUG - sendData thread started.
+2023-12-30 19:40:14 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:40:15 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:40:15 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:40:15 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:40:15 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:40:15 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-30 19:40:15 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-30 19:40:15 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-30 19:40:15 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:40:15 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:40:15 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:40:21 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 4651) : hi i wm :;toto:;------Chat de groupe-------
+2023-12-30 19:43:06 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 4651) : [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2023-12-30 19:43:23 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-30 19:43:23 - __main__ - DEBUG - sendData thread started.
+2023-12-30 19:43:38 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:43:38 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:43:38 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:43:39 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:43:39 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:43:39 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-30 19:43:39 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-30 19:43:39 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-30 19:43:39 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:43:39 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:43:39 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:43:44 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 50484) : i am toto:;toto:;------Chat de groupe-------
