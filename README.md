@@ -7,7 +7,25 @@ Un programme de chat basé sur PyQt5 offrant des communications en temps réel e
 - Chat de groupe : communiquez avec plusieurs utilisateurs dans un espace commun.
 - Chat privé : engagez des conversations privées avec d'autres utilisateurs sélectionnés.
 - Visualisation des utilisateurs connectés : voyez qui est en ligne en temps réel.
+- Commandes d'administration : les administrateurs peuvent gérer les utilisateurs et voir qui est en ligne.
 - Interface utilisateur basée sur PyQt5 : une expérience utilisateur moderne et réactive.
+
+## Commandes Administrateur
+
+En plus des commandes standard pour démarrer et arrêter le serveur, une commande d'administration a été ajoutée pour permettre à l'administrateur de voir tous les utilisateurs actuellement connectés.
+
+### Commandes Disponibles
+
+- `show users` : Affiche la liste de tous les utilisateurs actuellement connectés avec leurs adresses IP et ports. Cette commande permet à l'administrateur de surveiller les utilisateurs actifs sur le serveur.
+
+- `kick` : Permet à l'administrateur d'expulser un utilisateur du chat. Utilisez la commande suivie de l'identifiant de l'utilisateur et de la durée de l'expulsion en heures. Par exemple, `kick username 1` expulsera l'utilisateur `username` pendant 1 heure.
+
+- `kill` : Cette commande arrête le serveur de chat immédiatement. Elle doit être utilisée avec précaution car elle déconnectera tous les utilisateurs actuellement en ligne.
+
+### Utilisation des Commandes
+
+Pour utiliser ces commandes, l'administrateur doit accéder à la console du serveur et saisir la commande souhaitée. Un retour approprié sera affiché dans la console pour confirmer l'action effectuée.
+
 
 ## Serveur
 

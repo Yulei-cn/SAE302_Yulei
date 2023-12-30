@@ -25,7 +25,7 @@ class login_window(QtWidgets.QMainWindow, Ui_Form):
 
     def init(self):
         self.pushButton.clicked.connect(self.login_button)  # Connecter le slot
-        self.pushButton_2.clicked.connect(self.register_button)  # 注册按钮
+        self.pushButton_2.clicked.connect(self.register_button)  # Bouton d'inscription
         self.lineEdit_2.setText("127.0.0.1:8008")
 
     def login_button(self):
@@ -75,7 +75,7 @@ class login_window(QtWidgets.QMainWindow, Ui_Form):
             QMessageBox.warning(self, 'Avertissement', 'Veuillez entrer une adresse IP et un numéro de port corrects, format comme : 127.0.0.1:50007')
             return
 
-        # 获取用户名和密码
+        # Obtenir le nom d'utilisateur et le mot de passe
         username = self.lineEdit_3.text()
         password = self.lineEdit_password.text()
 
@@ -83,14 +83,14 @@ class login_window(QtWidgets.QMainWindow, Ui_Form):
             QMessageBox.critical(self, 'Erreur', 'Le nom d\'utilisateur et le mot de passe ne peuvent pas être vides pour l\'inscription !')
             return
 
-        # 尝试连接到服务器并发送注册信息
+        # Essayez de vous connecter au serveur et d'envoyer les informations d'inscription
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((IP, int(PORT)))
             credentials = f"register:{username}:{password}"
             s.send(credentials.encode())
 
-            # 接收服务器响应
+            # Recevoir la réponse du serveur
             response = s.recv(1024).decode()
             if response == "Inscription réussie":
                 QMessageBox.information(self, 'Succès', 'Inscription réussie.')

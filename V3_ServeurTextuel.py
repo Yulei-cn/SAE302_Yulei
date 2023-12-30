@@ -209,6 +209,8 @@ class ChatServer(threading.Thread):
     def receive_admin_command(self):
         while True:
             cmd = input("Entrez la commande de l'administrateur : ")
+            if cmd == "show users":
+                self.show_all_users()
             if cmd.startswith("kick"):
                 parts = cmd.split(" ")
                 if len(parts) >= 3 and parts[2].isdigit():
@@ -259,6 +261,13 @@ class ChatServer(threading.Thread):
         finally:
             lock.release()
             os._exit(0)  # Arrêter immédiatement le programme
+
+    def show_all_users(self):
+        # This new method prints the list of all currently connected users
+        with lock:  # Make sure to use the lock to prevent concurrent access
+            print("Liste des utilisateurs connectés :")
+            for conn, username, addr in users:
+                print(f"{username} - {addr[0]}:{addr[1]}")
 
 if __name__ == '__main__':
     cserver = ChatServer(PORT)

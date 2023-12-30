@@ -16,12 +16,19 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
+     <widget class="QTextEdit" name="logArea">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QTableWidget" name="userTable">
       <property name="rowCount">
        <number>0</number>
       </property>
       <property name="columnCount">
-       <number>3</number>
+       <number>4</number>
       </property>
       <column>
        <property name="text">
@@ -30,41 +37,58 @@
       </column>
       <column>
        <property name="text">
-        <string>Kick</string>
+        <string>IP Address</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Ban</string>
+        <string>Port</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Actions</string>
        </property>
       </column>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="startServerButton">
-      <property name="text">
-       <string>Start Server</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="startServerButton">
+        <property name="text">
+         <string>Start Server</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopServerButton">
+        <property name="text">
+         <string>Stop Server</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="stopServerButton">
-      <property name="text">
-       <string>Stop Server</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="commandLayout">
+      <item>
+       <widget class="QLineEdit" name="commandInput">
+        <property name="placeholderText">
+         <string>Enter admin command</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="executeCommandButton">
+        <property name="text">
+         <string>Execute Command</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>25</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

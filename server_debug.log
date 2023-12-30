@@ -740,3 +740,26 @@
 2023-12-26 07:02:26 - __main__ - ERROR - Received data in wrong format: toto
 2023-12-26 07:02:34 - __main__ - DEBUG - Raw data received from ('127.0.0.1', 15133): hi i am toto:;toto:;------Group chat-------
 2023-12-26 07:02:55 - __main__ - ERROR - Error receiving data from ('127.0.0.1', 15133): [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+2023-12-28 22:51:27 - __main__ - INFO - Chat server starts running...
+2023-12-28 22:52:22 - __main__ - INFO - Chat server starts running...
+2023-12-28 22:52:27 - mysql.connector - DEBUG - Building SSL context
+2023-12-28 22:52:27 - mysql.connector - DEBUG - Switching to SSL
+2023-12-28 22:52:27 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-28 22:52:28 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-28 22:52:28 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-28 22:52:28 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-28 22:52:28 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-28 22:52:28 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-28 22:52:28 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-28 22:52:28 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-28 22:52:28 - __main__ - INFO - 数据库连接成功。
+2023-12-28 22:52:32 - __main__ - DEBUG - Raw data received from ('127.0.0.1', 24156): 
+2023-12-28 22:52:34 - mysql.connector - DEBUG - Building SSL context
+2023-12-28 22:52:35 - mysql.connector - DEBUG - Switching to SSL
+2023-12-28 22:52:35 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-28 22:52:35 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-28 22:52:35 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-28 22:52:35 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-28 22:52:35 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-28 22:52:35 - __main__ - INFO - 数据库连接成功。
+2023-12-28 22:52:38 - __main__ - DEBUG - Raw data received from ('127.0.0.1', 24159): 
