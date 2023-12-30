@@ -7,17 +7,17 @@ from PyQt5.QtWidgets import QMessageBox, QListWidgetItem
 from PyQt5.QtCore import pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QTextCharFormat, QColor
 
-# Remplacer par votre classe UI
+# 用您的UI类替换
 from client_output import Ui_Form
 from chatroom_output import Ui_MainWindow
 
-# Variables globales
+# 全局变量
 IP = ''
 PORT = ''
 user = ''
-listbox1 = ''  # Boîte de liste pour afficher les utilisateurs en ligne
-ii = 0  # Utilisé pour déterminer si la boîte de liste est ouverte ou fermée
-users = []  # Liste des utilisateurs en ligne
+listbox1 = ''  # 用于显示在线用户的列表框
+ii = 0  # 用于判断是开还是关闭列表框
+users = []  # 在线用户列表
 
 class login_window(QtWidgets.QMainWindow, Ui_Form):
     def __init__(self):
@@ -52,7 +52,7 @@ class login_window(QtWidgets.QMainWindow, Ui_Form):
             s.send(credentials.encode())
 
             response = s.recv(1024).decode()
-            if response == "Connexion réussie":
+            if response == "Connexion réussie":  # 匹配服务器发送的法语消息
                 self.hide()
                 Ui_Main = main_window(s)
                 Ui_Main.setWindowTitle("Nom d'utilisateur : " + user)
@@ -80,7 +80,7 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.update_txt.connect(self.update_text)
         self.plainTextEdit.setReadOnly(True)
 
-        self.plainTextEdit.insertPlainText("Bienvenue dans la salle de chat !")
+        self.plainTextEdit.insertPlainText("欢迎进入聊天室！")
 
         self.r = threading.Thread(target=self.recv)
         self.r.daemon = True
@@ -89,7 +89,7 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
     def send(self):
         message = self.plainTextEdit_2.toPlainText()
         if message:
-            full_message = f"{message}:;{user}:;------Chat de groupe-------"
+            full_message = f"{message}:;{user}:;------群聊-------"
             self.s.send(full_message.encode())
             self.plainTextEdit_2.setPlainText('')
 
@@ -98,14 +98,13 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
         while True:
             try:
                 data = self.s.recv(1024).decode()
-                print("接收到数据:", data)  # 确认是否接收到数据的调试语句
+                print("接收到数据:", data)
                 if not data:
                     print("没有接收到数据，断开连接")
                     break
 
                 if ":;" in data:
                     data_parts = data.split(':;')
-                    # 确保更新 UI 的操作在主线程中执行
                     QtCore.QMetaObject.invokeMethod(self, 'update_text', QtCore.Qt.QueuedConnection, 
                                                     QtCore.Q_ARG(list, data_parts))
                 else:
@@ -119,23 +118,20 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
         message, sender, receiver = text_list
         color_format = QTextCharFormat()
         
-        # 根据发送者是否为当前用户设置消息颜色
         if sender == user:
             color_format.setForeground(QColor("blue"))
         else:
             color_format.setForeground(QColor("green"))
             
-        # 在主线程中更新 UI
         self.plainTextEdit.setCurrentCharFormat(color_format)
         self.plainTextEdit.appendPlainText(f"{sender}: {message}")
 
-
     def private(self, item):
         self.chat = item.text()
-        if self.chat == '------Chat de groupe-------':
+        if self.chat == '------群聊-------':
             self.setWindowTitle(user)
             return
-        self.setWindowTitle(user + '  -->  ' + self.chat)
+        self.setWindowTitle(user + ' --> ' + self.chat)
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

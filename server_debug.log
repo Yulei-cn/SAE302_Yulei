@@ -965,3 +965,51 @@
 2023-12-30 19:43:39 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
 2023-12-30 19:43:39 - __main__ - INFO - Connexion à la base de données réussie.
 2023-12-30 19:43:44 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 50484) : i am toto:;toto:;------Chat de groupe-------
+2023-12-30 19:46:12 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-30 19:46:12 - __main__ - DEBUG - sendData thread started.
+2023-12-30 19:46:23 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:46:23 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:46:23 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:46:23 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:46:23 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:46:23 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-30 19:46:23 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-30 19:46:23 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-30 19:46:23 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:46:23 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:46:23 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:46:25 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 13884) : 
+2023-12-30 19:46:28 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:46:29 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:46:29 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:46:29 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:46:29 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:46:29 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:46:29 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:46:29 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:46:31 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 13887) : 
+2023-12-30 19:46:35 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:46:35 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:46:36 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:46:36 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:46:36 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:46:36 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:46:36 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:46:36 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:46:37 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 13890) : 
+2023-12-30 19:49:35 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-30 19:49:35 - __main__ - DEBUG - sendData thread started.
+2023-12-30 19:49:39 - mysql.connector - DEBUG - Building SSL context
+2023-12-30 19:49:39 - mysql.connector - DEBUG - Switching to SSL
+2023-12-30 19:49:40 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-30 19:49:40 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-30 19:49:40 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-30 19:49:40 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-30 19:49:40 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-30 19:49:40 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-30 19:49:40 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-30 19:49:40 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-30 19:49:40 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-30 19:49:46 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 2803) : hi i wam
+:;toto:;------群聊-------
+2023-12-30 19:49:55 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 2803) : [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
