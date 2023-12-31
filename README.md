@@ -84,5 +84,12 @@ Sélectionnez un utilisateur pour entrer en mode chat privé avec cette personne
 ![image du mode chat privé](/etage3.png)
 
 En sélectionnant '------Chat de groupe-------', vous revenez au mode chat de groupe.
-```
+
+## Explications sur les fichiers V3/V4
+
+**V3** correspond à un serveur textuel avec un client graphique, et remplit toutes les exigences de SAE302. 
+
+**V4**, quant à lui, représente un serveur graphique et un client graphique. Toutefois, des problèmes sont survenus lors des interactions entre le client et le serveur, empêchant l'affichage correct sur l'interface utilisateur du client. Bien que le système permette à l'administrateur d'approuver les demandes d'accès aux canaux privés, les problèmes d'interaction ont causé une défaillance dans la réception des messages de réponse appropriés par le client, l'empêchant ainsi de rejoindre les canaux.
+
+En outre, nous avons apporté d'autres améliorations que nous avons également incluses.
 
