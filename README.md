@@ -96,30 +96,62 @@ Vous pouvez voir sur la console que le message envoyé par le client a été re�
 
 Je pense que le problème réside dans les fonctions d'envoi et de réception, mais la complexité du code a augmenté en raison de la nécessité d'adapter le serveur graphique à l'interface utilisateur. Ce problème pourrait être résolu si nous avions plus de temps. L'utilisation de QT pour la création de l'interface utilisateur est très pratique, mais le débogage du code nécessite plus de temps.
 
-## supplémentaire
-Pour ajouter la prise en charge des emoji à votre discussion, vous pouvez ajouter un bouton emoji à côté de la zone de saisie de texte. Lorsque l'utilisateur clique sur ce bouton, une petite fenêtre contenant des emojis s'ouvre parmi lesquelles l'utilisateur peut choisir.
+## +++Supplémentaire+++
 
-Étant donné que la mise en œuvre d'un sélecteur d'émoticônes complet nécessite davantage de conception d'interface utilisateur et de gestion des événements, une méthode simplifiée est fournie ici, en insérant simplement une émoticône fixe dans la zone de texte à titre d'exemple.
+### Partie 1: Ajout de Fonctionnalité Emoji
+
+**Description** :
+Intégration d'un bouton emoji pour permettre aux utilisateurs de sélectionner et d'insérer des emojis dans leurs messages de chat.
+
+**Implémentation** :
+- **UI Update** : Ajouter un bouton emoji à côté de la zone de saisie du texte.
+- **Fonctionnalité** : Ouvrir une liste d'emojis lors du clic sur le bouton pour permettre la sélection.
+- **Insertion d'Emoji** : Insérer l'emoji sélectionné dans la zone de texte.
+
+**Exemple de Code** :
+```python
+def insert_emoji(self):
+    current_text = self.plainTextEdit_2.toPlainText()
+    emoji = "😊"  # Exemple d'emoji
+    new_text = current_text + emoji
+    self.plainTextEdit_2.setPlainText(new_text)
+```
+*Ce code peut être étendu pour inclure une gamme complète d'emojis.*
+
+**Visualisation** :
 ![image du mode chat privé](/etage5.png)
 
-Dans votre code, la fonction de notification des messages est constituée de plusieurs éléments clés au sein de la classe `main_window` :
-1. **Définition du Signal** :
-   Un signal nommé `new_message_signal` est défini dans la classe `main_window`. Ce signal est utilisé pour communiquer lors de la réception d'un nouveau message. Le signal est défini comme `QtCore.pyqtSignal(str)`, ce qui signifie qu'il transmettra un argument de type chaîne de caractères (le contenu du message).
+---
 
-2. **Connexion du Signal** :
-   Dans la méthode d'initialisation (`__init__`) de `main_window`, le signal `new_message_signal` est connecté à la méthode `show_notification`. Cela signifie que lorsque le signal est déclenché, la méthode `show_notification` est appelée.
+### Partie 2: Fonction de Notification des Messages
 
-   ```python
-   self.new_message_signal.connect(self.show_notification)
-   ```
+**Description** :
+Méthode pour afficher des notifications lors de la réception de nouveaux messages dans l'application de chat.
 
-3. **Réception du Message et Déclenchement du Signal** :
-   Dans la méthode `recv`, lorsque de nouvelles données de message sont reçues du serveur, ces données sont analysées et le signal `new_message_signal` est émis pour gérer le message. Ce signal porte le contenu du message reçu du serveur.
+**Détails de l'Implémentation** :
+1. **Signal PyQt** : Utilisation de `QtCore.pyqtSignal(str)` pour transmettre le contenu du message.
+2. **Connexion du Signal** : Connexion de `new_message_signal` à la méthode `show_notification`.
+3. **Traitement des Messages Reçus** : Analyse des données reçues et émission du signal avec le contenu du message.
+4. **Affichage des Notifications** : La méthode `show_notification` reçoit le contenu du message et l'affiche.
 
-   ```python
-   self.new_message_signal.emit(actual_message)
-   ```
+**Code Concerné** :
+```python
+# Définition du signal
+new_message_signal = QtCore.pyqtSignal(str)
 
-4. **Méthode de Notification des Messages** (`show_notification`) :
-   C'est une méthode slot qui traite le signal `new_message_signal`. Elle reçoit un argument de type chaîne de caractères (le contenu du message).
+# Connexion du signal
+self.new_message_signal.connect(self.show_notification)
+
+# Réception et traitement du message
+def recv(self):
+    # ...
+    self.new_message_signal.emit('new_message:' + data)
+
+# Méthode de notification
+def show_notification(self, message):
+    QMessageBox.information(self, "新消息", message)
+```
+
+**Visualisation** :
 ![image du mode chat privé](/etage6.png)
+
