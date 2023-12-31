@@ -1,6 +1,6 @@
 import threading
 import socket
-import json  # json.dumps(some)打包   json.loads(some)解包
+import json  # json.dumps(some)  
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow,QMessageBox, QListWidgetItem
@@ -214,7 +214,6 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
                         item1.setBackground(QColor("#f0f0ff"))
                         self.listWidget.addItem(item1)
 
-                        # 添加新频道到列表中
                         for channel in ['------Chat de groupe-------', '-------Informatique--------', '----------Marketing---------', '--------Comptabilité--------']:
                             channel_item = QListWidgetItem(channel)
                             self.listWidget.addItem(channel_item)
