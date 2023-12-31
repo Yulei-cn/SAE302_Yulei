@@ -1027,3 +1027,92 @@
 2023-12-31 11:16:27 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
 2023-12-31 11:16:27 - __main__ - INFO - Connexion à la base de données réussie.
 2023-12-31 11:16:30 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 45368) : h:;toto:;------群聊-------
+2023-12-31 16:25:48 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-31 16:25:48 - __main__ - DEBUG - sendData thread started.
+2023-12-31 16:26:04 - mysql.connector - DEBUG - Building SSL context
+2023-12-31 16:26:05 - mysql.connector - DEBUG - Switching to SSL
+2023-12-31 16:26:05 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-31 16:26:05 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-31 16:26:05 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-31 16:26:05 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-31 16:26:05 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-31 16:26:05 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-31 16:26:05 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-31 16:26:05 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-31 16:26:05 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-31 16:26:12 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 47087) : [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2023-12-31 16:27:51 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-31 16:27:51 - __main__ - DEBUG - sendData thread started.
+2023-12-31 16:27:59 - mysql.connector - DEBUG - Building SSL context
+2023-12-31 16:27:59 - mysql.connector - DEBUG - Switching to SSL
+2023-12-31 16:27:59 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-31 16:27:59 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-31 16:27:59 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-31 16:27:59 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-31 16:27:59 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-31 16:27:59 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-31 16:28:00 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-31 16:28:00 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-31 16:28:00 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-31 16:28:01 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 47104) : das:;toto:;------群聊-------
+2023-12-31 16:28:06 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 47104) : dsa:;toto:;------群聊-------
+2023-12-31 16:28:07 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 47104) : [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2023-12-31 16:32:13 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-31 16:32:13 - __main__ - DEBUG - sendData thread started.
+2023-12-31 16:32:20 - mysql.connector - DEBUG - Building SSL context
+2023-12-31 16:32:21 - mysql.connector - DEBUG - Switching to SSL
+2023-12-31 16:32:21 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-31 16:32:21 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-31 16:32:21 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-31 16:32:21 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-31 16:32:21 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-31 16:32:21 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-31 16:32:21 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-31 16:32:21 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-31 16:32:21 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-31 16:32:30 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 47147) : das:;toto:;------Chat de groupe-------
+2023-12-31 16:32:38 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 47147) : hi i am toto:;toto:;------Chat de groupe-------
+2023-12-31 16:45:24 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 47147) : [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2023-12-31 16:45:43 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-31 16:45:43 - __main__ - DEBUG - sendData thread started.
+2023-12-31 16:45:51 - mysql.connector - DEBUG - Building SSL context
+2023-12-31 16:45:51 - mysql.connector - DEBUG - Switching to SSL
+2023-12-31 16:45:51 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-31 16:45:51 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-31 16:45:51 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-31 16:45:52 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-31 16:45:52 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-31 16:45:52 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-31 16:45:52 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-31 16:45:52 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-31 16:45:52 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-31 16:46:08 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 47259) : [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2023-12-31 16:46:19 - mysql.connector - DEBUG - Building SSL context
+2023-12-31 16:46:19 - mysql.connector - DEBUG - Switching to SSL
+2023-12-31 16:46:19 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-31 16:46:19 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-31 16:46:19 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-31 16:46:19 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-31 16:46:19 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-31 16:46:19 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-31 16:46:20 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 47261) : toto
+2023-12-31 16:46:20 - __main__ - ERROR - Données reçues dans un format incorrect : toto
+2023-12-31 16:46:28 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 47261) : [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+2023-12-31 16:49:36 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-31 16:49:36 - __main__ - DEBUG - sendData thread started.
+2023-12-31 16:49:41 - mysql.connector - DEBUG - Building SSL context
+2023-12-31 16:49:41 - mysql.connector - DEBUG - Switching to SSL
+2023-12-31 16:49:41 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-31 16:49:41 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-31 16:49:41 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-31 16:49:41 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-31 16:49:41 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-31 16:49:41 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-31 16:49:41 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-31 16:49:42 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-31 16:49:42 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-31 16:49:42 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 47298) : toto
+2023-12-31 16:49:42 - __main__ - ERROR - Données reçues dans un format incorrect : toto
+2023-12-31 16:49:57 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 47298) : das:;toto:;------Chat de groupe-------
+2023-12-31 16:50:05 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 47298) : hi i am toto:;toto:;------Chat de groupe-------
+2023-12-31 16:50:09 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 47298) : [WinError 10054] 远程主机强迫关闭了一个现有的连接。

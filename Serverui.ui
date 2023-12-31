@@ -88,6 +88,53 @@
       </item>
      </layout>
     </item>
+    <!-- New section for channel requests -->
+    <item>
+     <widget class="QGroupBox" name="channelRequestGroupBox">
+      <property name="title">
+       <string>Channel Requests</string>
+      </property>
+      <layout class="QVBoxLayout" name="channelRequestLayout">
+       <!-- Example for one channel: Comptabilité -->
+       <item>
+        <widget class="QWidget" name="comptabiliteRequestWidget" native="true">
+         <layout class="QHBoxLayout" name="comptabiliteRequestLayout">
+          <item>
+           <widget class="QLabel" name="comptabiliteLabel">
+            <property name="text">
+             <string>Comptabilité:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="comptabiliteUserInput">
+            <property name="placeholderText">
+             <string>User Request</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="comptabiliteApproveButton">
+            <property name="text">
+             <string>Approve</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="comptabiliteDenyButton">
+            <property name="text">
+             <string>Deny</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <!-- Repeat similar structure for other channels: Informatique, Marketing -->
+       <!-- ... -->
+      </layout>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
