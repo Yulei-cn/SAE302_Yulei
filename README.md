@@ -96,3 +96,8 @@ Vous pouvez voir sur la console que le message envoyé par le client a été re�
 
 Je pense que le problème réside dans les fonctions d'envoi et de réception, mais la complexité du code a augmenté en raison de la nécessité d'adapter le serveur graphique à l'interface utilisateur. Ce problème pourrait être résolu si nous avions plus de temps. L'utilisation de QT pour la création de l'interface utilisateur est très pratique, mais le débogage du code nécessite plus de temps.
 
+## supplémentaire
+Pour ajouter la prise en charge des emoji à votre discussion, vous pouvez ajouter un bouton emoji à côté de la zone de saisie de texte. Lorsque l'utilisateur clique sur ce bouton, une petite fenêtre contenant des emojis s'ouvre parmi lesquelles l'utilisateur peut choisir.
+
+Étant donné que la mise en œuvre d'un sélecteur d'émoticônes complet nécessite davantage de conception d'interface utilisateur et de gestion des événements, une méthode simplifiée est fournie ici, en insérant simplement une émoticône fixe dans la zone de texte à titre d'exemple.
+![image du mode chat privé](/etage5.png)
