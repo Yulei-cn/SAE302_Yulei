@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Users\57799\Downloads\chatroom-master\chatroom-master\Chatroom.ui'
+# Form implementation generated from reading ui file 'C:\Users\57799\Desktop\Semestre3\SAE302\SAE302_Yulei\Chatroom.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.10
 #
@@ -29,6 +29,9 @@ class Ui_MainWindow(object):
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setObjectName("pushButton_2")
         self.horizontalLayout.addWidget(self.pushButton_2)
+        self.newButton = QtWidgets.QPushButton(self.centralwidget)
+        self.newButton.setObjectName("newButton")
+        self.horizontalLayout.addWidget(self.newButton)
         self.gridLayout.addLayout(self.horizontalLayout, 2, 0, 1, 1)
         self.plainTextEdit = QtWidgets.QPlainTextEdit(self.centralwidget)
         self.plainTextEdit.setObjectName("plainTextEdit")
@@ -67,6 +70,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Chatoom"))
         self.pushButton.setText(_translate("MainWindow", "Send"))
         self.pushButton_2.setText(_translate("MainWindow", "Quit"))
+        self.newButton.setText(_translate("MainWindow", "emoji"))
         __sortingEnabled = self.listWidget.isSortingEnabled()
         self.listWidget.setSortingEnabled(False)
         item = self.listWidget.item(0)

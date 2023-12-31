@@ -131,6 +131,7 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton.clicked.connect(self.send)  # Connecter le slot d'envoi
         self.listWidget.currentItemChanged.connect(self.private)
         self.pushButton_2.clicked.connect(self.quit_app)
+        self.newButton.clicked.connect(self.insert_emoji)
         self.update_txt.connect(self.update_text)
         self.plainTextEdit.setReadOnly(True)
 
@@ -169,6 +170,12 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
         if self.s:
             self.s.close()
         self.close()
+
+    def insert_emoji(self):
+        current_text = self.plainTextEdit_2.toPlainText()
+        emoji = "😊"  # 示例表情符号
+        new_text = current_text + emoji
+        self.plainTextEdit_2.setPlainText(new_text)
 
     def recv(self):
         global users
