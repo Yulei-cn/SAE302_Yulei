@@ -91,6 +91,7 @@ En sélectionnant '------Chat de groupe-------', vous revenez au mode chat de gr
 
 **V4**, quant à lui, représente un serveur graphique et un client graphique. Toutefois, des problèmes sont survenus lors des interactions entre le client et le serveur, empêchant l'affichage correct sur l'interface utilisateur du client. Bien que le système permette à l'administrateur d'approuver les demandes d'accès aux canaux privés, les problèmes d'interaction ont causé une défaillance dans la réception des messages de réponse appropriés par le client, l'empêchant ainsi de rejoindre les canaux.
 ![image du mode chat privé](/etage4.png)
+## Analyse du Problème
 
-En outre, nous avons apporté d'autres améliorations que nous avons également incluses.
+Je pense que le problème réside dans les fonctions d'envoi et de réception, mais la complexité du code a augmenté en raison de la nécessité d'adapter le serveur graphique à l'interface utilisateur. Ce problème pourrait être résolu si nous avions plus de temps. L'utilisation de QT pour la création de l'interface utilisateur est très pratique, mais le débogage du code nécessite plus de temps.
 
