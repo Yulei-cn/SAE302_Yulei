@@ -117,16 +117,12 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.init()
 
     def closeEvent(self, event: QtGui.QCloseEvent) -> None:
-        """
-        Réécrire la méthode closeEvent de la classe QWidget, déclenchée automatiquement lorsque la fenêtre est fermée
-        """
         reply = QtWidgets.QMessageBox.question(self, 'Confirmation', "Êtes-vous sûr de vouloir quitter ?",
                                                QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
                                                QtWidgets.QMessageBox.No)
         if reply == QtWidgets.QMessageBox.Yes:
-            super().closeEvent(event)  # Ajouter la méthode de la classe parente pour ne pas écraser la méthode de la classe parente (important !!!)
-            # self.r.terminate()
-            self.s.close()
+            if self.s:
+                self.s.close()
             event.accept()
         else:
             event.ignore()
@@ -134,6 +130,7 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
     def init(self):
         self.pushButton.clicked.connect(self.send)  # Connecter le slot d'envoi
         self.listWidget.currentItemChanged.connect(self.private)
+        self.pushButton_2.clicked.connect(self.quit_app)
         self.update_txt.connect(self.update_text)
         self.plainTextEdit.setReadOnly(True)
 
@@ -163,6 +160,12 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
         mes = self.plainTextEdit_2.toPlainText() + ':;' + user + ':;' + self.chat  # Ajouter le marqueur de l'interlocuteur
         self.s.send(mes.encode())
         self.plainTextEdit_2.setPlainText('')  # Vider la zone de texte après l'envoi
+
+    def quit_app(self):
+        # Close the socket connection safely
+        if self.s:
+            self.s.close()
+        self.close()
 
     def recv(self):
         global users
