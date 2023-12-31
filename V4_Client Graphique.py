@@ -1,18 +1,5 @@
 import threading
 import socket
-import json
-import sys
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox, QListWidgetItem
-from PyQt5.QtCore import pyqtSignal, pyqtSlot
-from PyQt5.QtGui import QTextCharFormat, QColor
-
-# Remplacez par vos classes UI
-from client_output import Ui_Form
-from chatroom_output import Ui_MainWindow
-
-# Variables globalesimport threading
-import socket
 import json  # json.dumps(some)  
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -118,8 +105,8 @@ class login_window(QtWidgets.QMainWindow, Ui_Form):
 
 
 class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
-
     update_txt = QtCore.pyqtSignal(list)
+    new_message_signal = QtCore.pyqtSignal(str)  
 
     def __init__(self, socket):
         super(main_window, self).__init__()
@@ -128,6 +115,16 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.chat = '------Chat de groupe-------'
         self.setupUi(self)
         self.init()
+        self.new_message_signal.connect(self.show_notification)
+
+    def show_notification(self, message):
+        QMessageBox.information(self, "YOU HAVE NEW MSG", message)
+
+    @QtCore.pyqtSlot(str)
+    def handle_new_message(self, message):
+        if message.startswith('new_message:'):
+            actual_message = message.split(':', 1)[1]
+            self.show_notification(actual_message)  
 
     def closeEvent(self, event: QtGui.QCloseEvent) -> None:
         reply = QtWidgets.QMessageBox.question(self, 'Confirmation', "Êtes-vous sûr de vouloir quitter ?",
@@ -144,6 +141,7 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton.clicked.connect(self.send)  # Connecter le slot d'envoi
         self.listWidget.currentItemChanged.connect(self.private)
         self.pushButton_2.clicked.connect(self.quit_app)
+        self.newButton.clicked.connect(self.insert_emoji)
         self.update_txt.connect(self.update_text)
         self.plainTextEdit.setReadOnly(True)
 
@@ -183,13 +181,30 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
             self.s.close()
         self.close()
 
+    def insert_emoji(self):
+        current_text = self.plainTextEdit_2.toPlainText()
+        emoji = "😊"  
+        new_text = current_text + emoji
+        self.plainTextEdit_2.setPlainText(new_text)
+
     def recv(self):
         global users
         while True:
             try:
                 data = self.s.recv(1024).decode()
+                if data:
+                    if data.startswith('new_message:'):
+                        parts = data.split(':', 2)
+                        if len(parts) >= 3:
+                            actual_message = parts[2]
+                            self.new_message_signal.emit(actual_message)  
+                    
                 if not data:
                     break  # Si aucune donnée, sortir de la boucle
+
+                if data.startswith('new_message:'):
+                    actual_message = data.split(':', 1)[1]
+                    self.show_notification("NEW MSG", actual_message)
 
                 if data.startswith('kick:'):
                     # Traiter les messages d'expulsion d'utilisateurs
@@ -276,133 +291,6 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
 if __name__ == '__main__':
     from PyQt5 import QtCore
     QtCore.QCoreApplication.setAttribute(Qt.AA_EnableHighDpiScaling)  # Adapter automatiquement la rés
-    app = QtWidgets.QApplication(sys.argv)
-    window = login_window()
-    window.show()
-    sys.exit(app.exec_())
-
-IP = ''
-PORT = ''
-user = ''
-listbox1 = ''  # Boîte de liste pour afficher les utilisateurs en ligne
-ii = 0  # Utilisé pour déterminer si la boîte de liste est ouverte ou fermée
-users = []  # Liste des utilisateurs en ligne
-
-class login_window(QtWidgets.QMainWindow, Ui_Form):
-    def __init__(self):
-        super(login_window, self).__init__()
-        self.setupUi(self)
-        self.init()
-
-    def init(self):
-        self.pushButton.clicked.connect(self.login_button)
-        self.lineEdit_2.setText("127.0.0.1:8008")
-
-    def login_button(self):
-        global IP, PORT, user, Ui_Main
-        try:
-            IP, PORT = self.lineEdit_2.text().split(':')
-            PORT = int(PORT)
-        except ValueError:
-            QMessageBox.warning(self, 'Attention', 'Veuillez entrer une adresse IP et un numéro de port valides')
-            return
-
-        user = self.lineEdit_3.text()
-        password = self.lineEdit_password.text()
-
-        if not user or not password:
-            QMessageBox.critical(self, 'Erreur', 'Le nom d’utilisateur et le mot de passe ne peuvent pas être vides !')
-            return
-
-        try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect((IP, PORT))
-            credentials = f"{user}:{password}"
-            s.send(credentials.encode())
-
-            response = s.recv(1024).decode()
-            if response == "Connexion réussie":  # Correspond au message envoyé par le serveur en français
-                self.hide()
-                Ui_Main = main_window(s)
-                Ui_Main.setWindowTitle("Nom d'utilisateur : " + user)
-                Ui_Main.show()
-            else:
-                QMessageBox.critical(self, 'Échec de la connexion', 'Nom d’utilisateur ou mot de passe incorrect')
-                s.close()
-        except Exception as e:
-            QMessageBox.critical(self, 'Échec de la connexion', f'Impossible de se connecter au serveur : {e}')
-            if 's' in locals():
-                s.close()
-
-class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
-    update_txt = pyqtSignal(list)
-
-    def __init__(self, socket):
-        super(main_window, self).__init__()
-        self.s = socket
-        self.setupUi(self)
-        self.init()
-
-    def init(self):
-        self.pushButton.clicked.connect(self.send)
-        self.listWidget.currentItemChanged.connect(self.private)
-        self.update_txt.connect(self.update_text)
-        self.plainTextEdit.setReadOnly(True)
-
-        self.plainTextEdit.insertPlainText("Bienvenue dans la salle de chat !")
-
-        self.r = threading.Thread(target=self.recv)
-        self.r.daemon = True
-        self.r.start()
-
-    def send(self):
-        message = self.plainTextEdit_2.toPlainText()
-        if message:
-            full_message = f"{message}:;{user}:;------Chat de groupe-------"
-            self.s.send(full_message.encode())
-            self.plainTextEdit_2.setPlainText('')
-
-    def recv(self):
-        global users
-        while True:
-            try:
-                data = self.s.recv(1024).decode()
-                print("Données reçues :", data)
-                if not data:
-                    print("Aucune donnée reçue, déconnexion")
-                    break
-
-                if ":;" in data:
-                    data_parts = data.split(':;')
-                    QtCore.QMetaObject.invokeMethod(self, 'update_text', QtCore.Qt.QueuedConnection, 
-                                                    QtCore.Q_ARG(list, data_parts))
-                else:
-                    print("Les données ne contiennent pas le séparateur attendu")
-            except Exception as e:
-                print("Erreur lors de la réception des données :", e)
-                break
-
-    @QtCore.pyqtSlot(list)
-    def update_text(self, text_list):
-        message, sender, receiver = text_list
-        color_format = QTextCharFormat()
-        
-        if sender == user:
-            color_format.setForeground(QColor("blue"))
-        else:
-            color_format.setForeground(QColor("green"))
-            
-        self.plainTextEdit.setCurrentCharFormat(color_format)
-        self.plainTextEdit.appendPlainText(f"{sender} : {message}")
-
-    def private(self, item):
-        self.chat = item.text()
-        if self.chat == '------Chat de groupe-------':
-            self.setWindowTitle(user)
-            return
-        self.setWindowTitle(user + ' --> ' + self.chat)
-
-if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = login_window()
     window.show()

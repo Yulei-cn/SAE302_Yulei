@@ -101,3 +101,25 @@ Pour ajouter la prise en charge des emoji à votre discussion, vous pouvez ajout
 
 Étant donné que la mise en œuvre d'un sélecteur d'émoticônes complet nécessite davantage de conception d'interface utilisateur et de gestion des événements, une méthode simplifiée est fournie ici, en insérant simplement une émoticône fixe dans la zone de texte à titre d'exemple.
 ![image du mode chat privé](/etage5.png)
+
+Dans votre code, la fonction de notification des messages est constituée de plusieurs éléments clés au sein de la classe `main_window` :
+1. **Définition du Signal** :
+   Un signal nommé `new_message_signal` est défini dans la classe `main_window`. Ce signal est utilisé pour communiquer lors de la réception d'un nouveau message. Le signal est défini comme `QtCore.pyqtSignal(str)`, ce qui signifie qu'il transmettra un argument de type chaîne de caractères (le contenu du message).
+
+2. **Connexion du Signal** :
+   Dans la méthode d'initialisation (`__init__`) de `main_window`, le signal `new_message_signal` est connecté à la méthode `show_notification`. Cela signifie que lorsque le signal est déclenché, la méthode `show_notification` est appelée.
+
+   ```python
+   self.new_message_signal.connect(self.show_notification)
+   ```
+
+3. **Réception du Message et Déclenchement du Signal** :
+   Dans la méthode `recv`, lorsque de nouvelles données de message sont reçues du serveur, ces données sont analysées et le signal `new_message_signal` est émis pour gérer le message. Ce signal porte le contenu du message reçu du serveur.
+
+   ```python
+   self.new_message_signal.emit(actual_message)
+   ```
+
+4. **Méthode de Notification des Messages** (`show_notification`) :
+   C'est une méthode slot qui traite le signal `new_message_signal`. Elle reçoit un argument de type chaîne de caractères (le contenu du message).
+![image du mode chat privé](/etage6.png)
