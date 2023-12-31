@@ -1013,3 +1013,17 @@
 2023-12-30 19:49:46 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 2803) : hi i wam
 :;toto:;------群聊-------
 2023-12-30 19:49:55 - __main__ - ERROR - Erreur de réception des données de ('127.0.0.1', 2803) : [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+2023-12-31 11:16:11 - __main__ - INFO - Le serveur de chat commence à fonctionner...
+2023-12-31 11:16:11 - __main__ - DEBUG - sendData thread started.
+2023-12-31 11:16:27 - mysql.connector - DEBUG - Building SSL context
+2023-12-31 11:16:27 - mysql.connector - DEBUG - Switching to SSL
+2023-12-31 11:16:27 - mysql.connector - DEBUG - SSL has been enabled
+2023-12-31 11:16:27 - mysql.connector - DEBUG - Starting authorization phase
+2023-12-31 11:16:27 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2023-12-31 11:16:27 - mysql.connector - INFO - package: mysql.connector.plugins
+2023-12-31 11:16:27 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2023-12-31 11:16:27 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-12-31 11:16:27 - mysql.connector - DEBUG - Exchanging further packets
+2023-12-31 11:16:27 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2023-12-31 11:16:27 - __main__ - INFO - Connexion à la base de données réussie.
+2023-12-31 11:16:30 - __main__ - DEBUG - Données brutes reçues de ('127.0.0.1', 45368) : h:;toto:;------群聊-------

@@ -151,6 +151,9 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
     def send(self, *args):
         # S'il n'y a pas d'interlocuteur, un message d'erreur sera affiché lors de l'envoi d'un message
         users.append('------Chat de groupe-------')
+        users.append('--------Informatique-------')
+        users.append('---------Marketing---------')
+        users.append('------Comptabilite---------')
         if self.chat not in users:
             QMessageBox.warning(self, 'Erreur d\'envoi', 'Il n\'y a personne avec qui parler !')
             return
@@ -210,8 +213,12 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
                         item1.setForeground(QColor("green"))
                         item1.setBackground(QColor("#f0f0ff"))
                         self.listWidget.addItem(item1)
-                        item2 = QListWidgetItem("------Chat de groupe-------")
-                        self.listWidget.addItem(item2)
+
+                        # 添加新频道到列表中
+                        for channel in ['------Chat de groupe-------', '-------Informatique--------', '----------Marketing---------', '--------Comptabilité--------']:
+                            channel_item = QListWidgetItem(channel)
+                            self.listWidget.addItem(channel_item)
+
                         for i in range(len(users)):
                             item = QListWidgetItem(users[i])
                             item.setForeground(QColor("green"))

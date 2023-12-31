@@ -77,6 +77,7 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
     def init(self):
         self.pushButton.clicked.connect(self.send)
         self.listWidget.currentItemChanged.connect(self.private)
+        self.pushButton_2.clicked.connect(self.quit_app)
         self.update_txt.connect(self.update_text)
         self.plainTextEdit.setReadOnly(True)
 
@@ -92,6 +93,12 @@ class main_window(QtWidgets.QMainWindow, Ui_MainWindow):
             full_message = f"{message}:;{user}:;------群聊-------"
             self.s.send(full_message.encode())
             self.plainTextEdit_2.setPlainText('')
+
+    def quit_app(self):
+        # Close the socket connection safely
+        if self.s:
+            self.s.close()
+        self.close()
 
     def recv(self):
         global users
